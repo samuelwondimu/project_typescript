@@ -1,6 +1,6 @@
 import { Application, Request, Response } from "express";
 import { UserController } from "../modules/users/user.controller";
-import { AccountController } from "../modules/accounts/account.controller";
+import { AccountController } from "../modules/auth/auth.controller";
 
 export class userRoutes {
   private user_controller: UserController = new UserController();

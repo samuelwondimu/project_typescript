@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 // import env from "../environment";
 
 // Routes
+import { authRoutes } from "../routes/auth.routes";
 import { feedRoutes } from "../routes/feed.routes";
 import { userRoutes } from "../routes/user.routes";
 import { commonRoutes } from "../routes/common.routes";
-import { AccountRoutes } from "../routes/account.routes";
 
 class App {
   public app: express.Application;
@@ -18,16 +18,16 @@ class App {
   private feed_Route: feedRoutes = new feedRoutes();
   private user_Route: userRoutes = new userRoutes();
   private common_route: commonRoutes = new commonRoutes();
-  private account_Route: AccountRoutes = new AccountRoutes();
+  private auth_Routes: authRoutes = new authRoutes();
 
   constructor() {
     this.app = express();
     this.config();
     this.mongoSetup();
+    this.auth_Routes.route(this.app);
     this.feed_Route.route(this.app);
     this.user_Route.route(this.app);
     this.common_route.route(this.app);
-    this.account_Route.route(this.app);
   }
   private config(): void {
     // support application/json type post data
