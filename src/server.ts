@@ -1,8 +1,8 @@
 import app from "./config/app";
-// import env from "./environment";
+import config from "./config/config";
 
-const PORT = 5001;
+const NAMESPACE = "Server";
 
-app.listen(PORT, () => {
-  console.log("Express server listening on port " + PORT);
+app.listen(config.server.port, () => {
+  console.log("Express server listening on port " + config.server.port);
 });

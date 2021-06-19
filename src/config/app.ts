@@ -1,18 +1,20 @@
 import express from "express";
 import * as bodyParser from "body-parser";
 import mongoose from "mongoose";
-// import env from "../environment";
+import config from "./config";
 
 // Routes
 import { authRoutes } from "../routes/auth.routes";
 import { feedRoutes } from "../routes/feed.routes";
 import { userRoutes } from "../routes/user.routes";
 import { commonRoutes } from "../routes/common.routes";
+import logging from "./logging";
+
+const NAMESPACE = "Server";
 
 class App {
   public app: express.Application;
-  public mongoUrl: string =
-    "mongodb+srv://samuel:samuel@cluster0.mcod3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  public mongoUrl: string = config.mongo.url;
 
   // Routes
   private feed_Route: feedRoutes = new feedRoutes();
@@ -36,13 +38,16 @@ class App {
     this.app.use(bodyParser.urlencoded({ extended: false }));
   }
 
+  /** Connect to Mongo */
   private mongoSetup(): void {
-    mongoose.connect(this.mongoUrl, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-    });
+    mongoose
+      .connect(this.mongoUrl, config.mongo.options)
+      .then((result) => {
+        logging.info(NAMESPACE, "Mongo Connected");
+      })
+      .catch((error) => {
+        logging.error(NAMESPACE, error.message, error);
+      });
   }
 }
 export default new App().app;
