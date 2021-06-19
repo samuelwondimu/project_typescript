@@ -1,5 +1,9 @@
-# project_typescript
+<h3 align="center">Project Typescript</h3>
 
+<p align="center">
+    a REST API made with typescript express nodejs and mongodb!
+  </p>
+</p>
 REST_API with typescript/express - MongoDB - Node.Js
 
 # Auth - Routes
