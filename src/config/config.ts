@@ -8,7 +8,7 @@ const MONGO_OPTIONS = {
 };
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME;
-const MONGO_PASSWORD = process.env.MONGO_USERNAME;
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 const MONGO_HOST = process.env.MONGO_URL;
 
 const MONGO = {
