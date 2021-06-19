@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ts-node ./src/server.ts",
+    "start": "nodemon ./src/server.ts",
     "dev": "tsc && nodemon ./dist/server.js",
     "prod": "tsc && nodemon ./dist/server.js"
   },
