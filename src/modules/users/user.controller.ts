@@ -14,14 +14,8 @@ export class UserController {
 
   public create_user(req: Request, res: Response) {
     // check whether all the fields were send through the request
-    if (
-      req.body.username &&
-      req.body.name &&
-      req.body.profilePic &&
-      req.body.bio
-    ) {
+    if (req.body.name && req.body.profilePic && req.body.bio) {
       const user_params: IUser = {
-        username: req.body.username,
         name: req.body.name,
         profilePic: req.body.profilePic,
         bio: req.body.bio,
