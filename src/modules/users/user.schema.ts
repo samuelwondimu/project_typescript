@@ -4,9 +4,9 @@ import { ModificationNote } from "../common/model";
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-  username: {
-    type: String,
-    required: true,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "auth",
   },
   name: {
     type: String,
@@ -33,4 +33,3 @@ const schema = new Schema({
 });
 
 export default mongoose.model("users", schema);
-// git push origin <your_branch_name> --force

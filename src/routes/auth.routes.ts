@@ -37,7 +37,7 @@ export class authRoutes {
       "/v1/auth/all",
       this.auth_controller.getAllUser,
       (req: Request, res: Response) => {
-        res.status(200).json({ message: "validate account" });
+        res.status(200).json({ message: "get all account" });
       }
     );
   }
