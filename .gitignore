@@ -6,3 +6,4 @@ jspm_packages/
 # dotenv environment variables file
 
 dist
+.env
