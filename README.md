@@ -1,4 +1,4 @@
-<h3 align="center">Project Typescript</h3>
+<h1 align="center">Project Typescript</h1>
 
 <p align="center">
     a REST API made with typescript express nodejs and mongodb!
