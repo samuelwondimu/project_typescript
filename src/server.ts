@@ -1,10 +1,8 @@
 import app from "./config/app";
-import env from "./environment";
-const cors = require("cors");
+// import env from "./environment";
 
 const PORT = 5001;
 
-app.use(cors());
 app.listen(PORT, () => {
   console.log("Express server listening on port " + PORT);
 });
