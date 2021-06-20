@@ -20,7 +20,7 @@ const MONGO = {
 };
 
 const SERVER_HOSTNAME = "localhost";
-const SERVER_PORT = process.env.SERVER_PORT;
+const SERVER_PORT = process.env.SERVER_PORT || 5000;
 const SERVER_TOKEN_EXPIRETIME = process.env.SERVER_TOKEN_EXPIRETIME || 3600;
 const SERVER_TOKEN_ISSUER = process.env.SERVER_TOKEN_ISSUER || "coolIssuer";
 const SERVER_TOKEN_SECRET =
