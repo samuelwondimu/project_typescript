@@ -4,7 +4,6 @@
   "description": "",
   "main": "./dist/server.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
     "test": "ts-node ./src/server.ts",
     "start": "ts-node src/server.ts",
     "dev": "nodemon -x ts-node src/server.ts",
