@@ -2,12 +2,16 @@
   "name": "project_typescript",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "12.16.3"
+  },
   "main": "./dist/server.js",
   "scripts": {
-    "test": "ts-node ./src/server.ts",
-    "start": "ts-node src/server.ts",
-    "dev": "nodemon -x ts-node src/server.ts",
-    "prod": "tsc && nodemon ./dist/server.js"
+    "start": "node dist/server.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "keywords": [],
   "author": "",
